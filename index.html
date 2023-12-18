@@ -31,6 +31,32 @@
     <main>
         <section id="gift-list">
         <h2>Gift Ideas</h2>
+        <button id="randomButton">Random</button>
+        <!-- Script to handle the random button click -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const randomButton = document.getElementById("randomButton");
+                const itemList = document.querySelectorAll('ul li');
+
+                randomButton.addEventListener("click", function () {
+                    // Choose a random index from the itemList
+                    let randomIndex1 = Math.floor(Math.random() * itemList.length);
+                    let randomIndex2 = Math.floor(Math.random() * itemList.length);
+                    let randomIndex = null;
+                    while (randomIndex1 !== randomIndex2) {
+                        randomIndex1 = Math.floor(Math.random() * itemList.length);
+                        randomIndex2 = Math.floor(Math.random() * itemList.length);
+                    }
+
+                    randomIndex = randomIndex1;
+                    
+                    const randomItem = itemList[randomIndex];
+
+                    // Display the random item
+                    alert("Random Item: " + randomItem.textContent.trim());
+                });
+            });
+        </script>
         <ul><br><li>
             <img src="images/YSL_Y.jpg" alt="Yves Saint Laurent Men's Y Le Parfum 2-Piece Gift Set">
             <a href="https://www.google.com/search?client=safari&sca_esv=586199351&rls=en&sxsrf=AM9HkKmKAM4DJ-EKpBDt5vPy3QQxFII4MA:1701740321989&q=Yves+Saint+Laurent+Men%27s+Y+Le+Parfum+2-Piece+Gift+Set&tbm=shop&source=lnms&sa=X&ved=2ahUKEwiLlJHblPeCAxVsRzABHfH8CasQ0pQJegQIChAB&biw=1440&bih=820&dpr=2" target=%22_blank%22 title="Yves Saint Laurent Men's Y Le Parfum 2-Piece Gift Set">Yves Saint Laurent Men's Y Le Parfum 2-Piece Gift Set</a>                
